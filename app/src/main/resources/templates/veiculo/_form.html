@@ -1,0 +1,52 @@
+<input type="text" class="form-control" th:field="*{id}" />
+
+<div class="card-body">
+	<h3 class="card-title">Veiculo</h3>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group">
+				<label class="form-label">Placa<span class="form-required">*</span></label> <input type="text"
+					class="form-control" placeholder="Placa" th:field="*{placa}" />
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="form-group">
+				<label class="form-label">Modelo<span class="form-required">*</span></label> <input type="text"
+					class="form-control" placeholder="modelo" th:field="*{modelo}" />
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="form-group">
+				<label class="form-label">Chassi<span class="form-required">*</span></label> <input type="text"
+					class="form-control" placeholder="Chassi" th:field="*{chassi}" />
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="form-group">
+				<label class="form-label">Km Rodados<span class="form-required">*</span></label> <input type="text"
+					class="form-control" placeholder="Kilometragem rodada" th:field="*{kmRodados}" />
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="form-group">
+				<label class="form-label">Vencimento do Seguro<span class="form-required">*</span></label> <input type="text"
+					class="form-control" placeholder="Vencimento do Seguro em KM" th:field="*{vencimentoSeguro}" />
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="form-group">
+                        <label class="form-label">Veiculo Disponivel<span class="form-required">*</span></label>
+                        <select th:field="*{disponivel}" class="form-control custom-select" >
+                          <option value="true">Sim</option>
+                          <option value="false">Nao</option>
+                        </select>
+                      </div>
+		</div>
+		
+
+	</div>
+</div>
+<div class="card-footer text-right">
+	<button type="submit" class="btn btn-primary">Voltar</button>
+	<button th:href="@{/veiculo/}" class="btn btn-primary">Salvar</button>
+</div>

@@ -1,0 +1,23 @@
+<li sec:authorize="hasAuthority('ROLE_CONTABILIDADE')">
+	<a href="#"><i class="fa fa-lg fa-fw fa-building-o"></i> <span class="menu-item-parent">Clientes</span></a>
+	<ul>
+		<li>
+			<a th:href="@{/contabilidade/cliente/novo}">Novo Cliente</a>
+		</li>						
+	</ul>
+</li>
+<li sec:authorize="hasAuthority('ROLE_CONTABILIDADE')">
+	<a href="#"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">Usuários</span></a>
+	<ul>
+		<li><a th:href="@{/contabilidade/usuario}">Listagem</a></li>						
+		<li><a th:href="@{/contabilidade/usuario/novo}">Novo Usuário</a></li>						
+	</ul>
+</li>
+
+<li sec:authorize="hasAuthority('ROLE_CONTABILIDADE')">
+	<a href="#"><i class="fa fa-lg fa-fw fa-sitemap"></i> <span class="menu-item-parent">Tipos de Documentos</span></a>
+	<ul>
+		<li><a th:href="@{/contabilidade/tipo-documento}">Listagem</a></li>						
+		<li><a th:href="@{/contabilidade/tipo-documento/novo}">Novo Tipo de Documento</a></li>						
+	</ul>
+</li>

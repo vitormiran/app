@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
+
+	<aside id="left-panel">
+		<!-- User info -->
+		<div class="login-info" th:fragment="menu">
+			<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+				
+				<a href="javascript:void(0);">
+					<span sec:authentication="nome"></span>
+				</a> 
+				
+			</span>
+		</div>
+		<!-- end user info -->
+	
+		<!-- NAVIGATION : This navigation is also responsive
+	
+		To make this navigation dynamic please make sure to link the node
+		(the reference to the nav > ul) after page load. Or the navigation
+		will not initialize.
+		-->
+		<nav>
+			<!-- NOTE: Notice the gaps after each icon usage <i></i>..
+			Please note that these links work a bit different than
+			traditional href="" links. See documentation for details.
+			-->
+				
+			<ul>
+				<li>
+					<a class="menu-item" th:href="@{/index}" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+				</li>
+				<li>
+					<a class="menu-item" th:href="@{/mensagem}"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Mensagens</span><span class="badge pull-right inbox-badge">14</span></a>
+				</li>
+			</ul>
+			
+			<ul>
+				<li>
+					<a class="menu-item" href="#"><i class="fa fa-lg fa-fw fa-building-o"></i> <span class="menu-item-parent">Clientes</span></a>
+					<ul>
+						<li>
+							<a class="menu-item" th:href="@{/cliente/novo}">Novo</a>
+						</li>						
+						<li>
+							<a class="menu-item" th:href="@{/cliente/index}">Pesquisa</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a class="menu-item" href="#"><i class="fa fa-lg fa-fw fa-dollar"></i> <span class="menu-item-parent">Regra Precos</span></a>
+					<ul>
+						<li>
+							<a class="menu-item" th:href="@{/regraPreco/novo}">Novo</a>
+						</li>						
+						<li>
+							<a class="menu-item" th:href="@{/regraPreco/index}">Pesquisa</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a  class="menu-item" href="#"><i class="fa fa-lg fa-fw fa-truck"></i> <span class="menu-item-parent">Movimento</span></a>
+					<ul>
+						<li>
+							<a class="menu-item" th:href="@{/movimento/novo}">Novo</a>
+						</li>						
+						<li>
+							<a class="menu-item" th:href="@{/movimento/index}">Pesquisa</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a  class="menu-item" href="#"><i class="fa fa-lg fa-fw fa-cog"></i> <span class="menu-item-parent">Administracao</span></a>
+					<ul>
+						<li>
+							<a class="menu-item" th:href="@{/fruta}">Frutas</a>
+						</li>						
+					</ul>
+				</li>
+			</ul>
+
+			
+		</nav>
+		<span class="minifyme" data-action="minifyMenu"> 
+			<i class="fa fa-arrow-circle-left hit"></i> 
+		</span>
+	</aside>
+
+</html>

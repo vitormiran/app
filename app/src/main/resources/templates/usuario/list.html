@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout" th:with="secao='Home'">
+
+<div class="my-3 my-md-5" layout:fragment="content">
+
+	<div class="card">
+		<div class="card-header">
+			<h3 class="card-title">Usuarios</h3>
+			<div class="card-options">
+			  <a th:href="@{/usuario/novo}" class="btn btn-success btn-sm ml-2"><i class="fe fe-plus"></i> Novo Usuario</a>
+			</div>
+		</div>
+		
+		<div class="table-responsive">
+			<table class="table table-striped card-table table-vcenter text-nowrap">
+				<thead>
+					<tr>
+						<th class="w-1">ID.</th>
+						<th>Nome</th>
+						<th>Email</th>
+						<th>Cargo</th>
+						<th>Site de Alocacao</th>
+						<th>Telefone</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="usr : ${listagem}">
+						<td th:text="${usr.id}"></td>
+						<td th:text="${usr.nome}"></td>
+						<td th:text="${usr.email}"></td>
+						<td th:text="${usr.cargo}"></td>
+						<td th:text="${usr.siteAlocacao}"></td>
+						<td th:text="${usr.telefone}"></td>
+						<td class="text-right">
+							<a class="icon" th:href="@{/usuario/edit/{id}(id=${usr.id})}"> 
+								<i class="fe fe-edit"></i>
+							</a>
+							<a class="icon" th:href="@{/usuario/delete/{id}(id=${usr.id})}"> 
+								<i class="fa fa-trash"></i>
+							</a>
+						</td>
+					</tr>
+					<tr th:if="${listagem.size() == 0}">
+						<td colspan="2" th:text="#{tabela.nenhum.registro}"> </td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout" th:with="secao='Home'">
+
+<div class="my-3 my-md-5" layout:fragment="content">
+
+	<div class="card">
+		<div class="card-header">
+			<h3 class="card-title">Fretes Disponiveis</h3>
+			<div class="card-options">
+			  <a th:href="@{/usuario/novo}" class="btn btn-dark"><i class="fe fe-upload mr-1"></i>Enviar Frete</a>
+			  <a th:href="@{/usuario/novo}" class="btn btn-success btn-sm ml-3"><i class="fe fe-plus"></i>Novo Frete</a>
+			</div>
+		</div>
+		
+		<div class="table-responsive">
+			<table class="table table-striped card-table table-vcenter text-nowrap">
+				<thead>
+					<tr>
+						<th></th>
+						<th class="w-1">ID.</th>
+						<th>CEP Origem</th>
+						<th>CEP Destino</th>
+						<th>Data de Envio</th>
+						<th>Frete Externo?</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="f : ${listagem}">
+                        <td>
+                        	<div class="custom-controls-stacked">
+                          <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="example-checkbox2" value="${f.id}"  />
+                            <span class="custom-control-label"></span>
+                          </label>
+                        </div></td>
+						<td th:text="${f.id}"></td>
+						<td th:text="${f.cepOrigem}"></td>
+						<td th:text="${f.cepDestino}"></td>
+						<td th:text="${f.dataEnvio}"></td>
+						<td th:text="${f.freteExterno}"></td>
+						<td class="text-right">
+							<a class="icon" th:href="@{/usuario/edit/{id}(id=${f.id})}"> 
+								<i class="fe fe-edit"></i>
+							</a>
+							<a class="icon" th:href="@{/usuario/delete/{id}(id=${f.id})}"> 
+								<i class="fa fa-trash"></i>
+							</a>
+						</td>
+					</tr>
+					<tr th:if="${listagem.size() == 0}">
+						<td colspan="2" th:text="#{tabela.nenhum.registro}"> </td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+
+
+</html>

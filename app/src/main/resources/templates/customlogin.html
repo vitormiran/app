@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: head">	
+	<title>Custom Login Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+
+	<div class="page">
+		<div class="page-single">
+			<div class="container">
+				<div class="row">
+					<div class="col col-login mx-auto">
+						<div class="text-center mb-6">
+							<img src="./images/sgflogo.jpg" class="h-9" alt="" />
+						</div>
+						<form class="card" id="login-form"  name="f" th:action="@{/login}" method="post" role="form" >
+							<div class="card-body p-6">
+								<div class="card-title">Autentique-se com sua conta</div>
+								<div class="form-group">
+									<label class="form-label">Nome de Usuario</label>
+									<input type="text" name="username" id="username" tabindex="1"
+										class="form-control" placeholder="Username" value="marcia" />
+								</div>
+								<div class="form-group">
+									<label class="form-label"> Password </label>
+									<input type="password" name="password" id="password" tabindex="2"
+										class="form-control" placeholder="Password" value="123" />
+								</div>
+								<div class="form-group">
+									<label class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" />
+										<span class="custom-control-label">Lembre-se de mim</span>
+									</label>
+								</div>
+								<div class="form-footer">
+									<button type="submit" class="btn btn-primary btn-block">
+										Entrar
+									</button>
+								</div>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
+
+

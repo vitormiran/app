@@ -1,0 +1,20 @@
+<li sec:authorize="hasAuthority('ROLE_EMPRESA')">
+	<a href="#"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">Usuários</span></a>
+	<ul>
+		<li><a th:href="@{/cliente/usuario}">Listagem Usuário</a></li>						
+		<li sec:authorize="hasAuthority('ROLE_EMPRESA_ADMIN')"><a th:href="@{/cliente/usuario/novo}">Novo Usuário</a></li>						
+	</ul>
+</li>
+
+
+<li sec:authorize="hasAuthority('ROLE_EMPRESA')">
+	<a href="#"><i class="fa fa-lg fa-fw fa-file-o"></i> <span class="menu-item-parent">Documentos</span></a>
+	<ul>
+		<li>
+			<a th:href="@{/cliente/documento}"> Meus Documentos</a>
+		</li>						
+		<li>
+			<a th:href="@{/cliente/documento/enviar}"> Enviar Documento</a>
+		</li>						
+	</ul>
+</li>

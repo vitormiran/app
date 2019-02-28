@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<springProperty name="dbDriverClass" source="spring.datasource.driverClassName" />
+	<springProperty name="dbUrl" source="logback.datasource.url" />
+	<springProperty name="dbUser" source="spring.datasource.username" />
+	<springProperty name="dbPassword" source="spring.datasource.password" />
+
+	<appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+		<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+			<driverClass>${dbDriverClass}</driverClass>
+			<url>${dbUrl}</url>
+			<user>${dbUser}</user>
+			<password>${dbPassword}</password>
+		</connectionSource>
+
+		<filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+			<evaluator>
+				<expression>event.getMDCPropertyMap().containsKey("fatura") 
+							&amp;&amp; event.getLevel().isGreaterOrEqual(ch.qos.logback.classic.Level.INFO)
+				</expression>
+			</evaluator>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+	<logger name="br.com.montreal.bpo.automatizacao">
+		<appender-ref ref="DB" />
+	</logger>
+	 -->
+</configuration>
+

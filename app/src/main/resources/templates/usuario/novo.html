@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout" th:with="secao='Home'">
+	
+	<div class="my-3 my-md-5" layout:fragment="content">
+		<div class="row">
+			<div class="col-12">
+				<form action="#" th:action="@{salvar}" th:object="${usuarioForm}" method="post" class="card">
+					<div th:include="usuario/_form"></div>
+            	</form>
+			</div>
+		</div>
+	</div>
+
+
+</html>
